@@ -11,6 +11,7 @@ def get_image(image_name):
 
 #### 프로젝트 네임 #####
 st.write('# LGBM 실습 페이지')
+st.write('집에서 수정중')
 # #### 데이터 불러오기 ####
 # st.write('#### 전처리한 데이터')
 # model_train_joblib = joblib.load('lgbm_df.pkl')
