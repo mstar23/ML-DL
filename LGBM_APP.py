@@ -1,4 +1,6 @@
 import streamlit as st
+import joblib
+import pandas as pd # 판다스 불러오기
 
 from PIL import Image # 파이썬 기본라이브러리는 바로 사용 가능!
 import os
@@ -9,9 +11,11 @@ def get_image(image_name):
 
 #### 프로젝트 네임 #####
 st.write('# LGBM 실습 페이지')
-import pandas as pd # 판다스 불러오기
-data_url = 'https://media.githubusercontent.com/media/musthave-ML10/data_source/main/fraud.csv'
-df = pd.read_csv(data_url) # URL로 CSV 불러오기
-st.write('### 사용한 데이터')
-st.write(df.head())
+# #### 데이터 불러오기 ####
+# st.write('#### 전처리한 데이터')
+# model_train_joblib = joblib.load('lgbm_df.pkl')
+# st.write(lgbm_df.head())
+
+### 불러온 데이터로 훈련-테스트셋 분리
+
 
