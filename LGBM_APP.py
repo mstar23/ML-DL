@@ -1,5 +1,5 @@
 import streamlit as st
-# import joblib
+import joblib
 import pandas as pd # 판다스 불러오기
 
 from PIL import Image # 파이썬 기본라이브러리는 바로 사용 가능!
