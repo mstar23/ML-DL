@@ -14,7 +14,9 @@ st.write('# LGBM 실습 페이지')
 st.write('집에서 수정중')
 #### 데이터 불러오기 ####
 st.write('#### 전처리한 데이터')
-lgbm_df = joblib.load('lgbm_df.pkl')
+pkl_path = f"{os.path.dirname(os.path.abspath(__file__))}/lgbm_df.pkl"
+lgbm_df = joblib.load(pkl_path)
+lgbm_df = pd.DataFrame(lgbm_df)
 st.write(lgbm_df.head())
 
 ### 불러온 데이터로 훈련-테스트셋 분리
