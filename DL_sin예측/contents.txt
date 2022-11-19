@@ -2,3 +2,4 @@
 
 * issue
 - streamlit 사이트에 module이 import되지 않음
+- conda에서 pytorch 설치 하는 방법도 궁금 -> venv 파일을 따로 만들어서 활성화 해야 하는지?
