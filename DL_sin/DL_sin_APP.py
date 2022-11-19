@@ -14,4 +14,4 @@ st.write(
 )
 
 st.write('torch 연결 완료?')
-
+st.write('갈 길이 멀다;;')
