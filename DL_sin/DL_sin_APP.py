@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 import pandas as pd
 import math
-import torch
+# import torch
 import matplotlib.pyplot as plt
 
 st.write('## sin함수 예측하기')
@@ -13,5 +13,5 @@ st.write(
     '''
 )
 
-st.write('다시 열심히 해보자 ㅎㅎ')
+st.write('다시 열심히 해보자 ! ㅎㅎ')
 
