@@ -3,3 +3,4 @@ mlxtend
 pandas
 numpy
 scikit-learn  
+torch
