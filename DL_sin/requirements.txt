@@ -2,3 +2,4 @@ streamlit
 mlxtend
 pandas
 numpy
+scikit-learn  
