@@ -1,1 +1,4 @@
 간단하게 epoch을 바꿈에 따라 sin함수 결과가 어떻게 변하는지 살펴보는 웹 페이지 만들기 
+
+* issue
+- streamlit 사이트에 module이 import되지 않음
