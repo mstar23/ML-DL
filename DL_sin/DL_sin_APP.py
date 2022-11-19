@@ -13,6 +13,5 @@ st.write(
     '''
 )
 
-st.write('import 문제 어떻게 해결?')
-st.write('뭐야 되는거야???? 대박')
+st.write('다시 열심히 해보자 ㅎㅎ')
 
