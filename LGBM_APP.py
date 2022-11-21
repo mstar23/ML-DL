@@ -14,7 +14,8 @@ st.write('# LGBM 실습 페이지')
 st.write('집에서 수정중')
 #### 데이터 불러오기 ####
 st.write('#### 전처리한 데이터')
-st.write('큰일 날뻔 ㅎ')
+st.write('왜 import에 문제가 생겼지')
+
 # pkl_path = f"{os.path.dirname(os.path.abspath(__file__))}/lgbm_df.pkl"
 # lgbm_df = joblib.load(pkl_path)
 # lgbm_df = pd.DataFrame(lgbm_df)
