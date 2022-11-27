@@ -1,0 +1,1 @@
+# Mini_proj2 streamlit 연습
