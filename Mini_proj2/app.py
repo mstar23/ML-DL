@@ -13,5 +13,6 @@ st.write('---')
 # 데이터 불러오기
 data_path = f"{os.path.dirname(os.path.abspath(__file__))}/data.csv"
 data = pd.read_csv(data_path)
-# df = pd.DataFrame(data)
-st.write(data)
+df = pd.DataFrame(data)
+df.drop('Unnamed: 0',axis=1,inplace=True)
+st.write(df.head())
