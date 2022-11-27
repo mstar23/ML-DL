@@ -5,6 +5,7 @@ import pandas as pd
 import math
 import torch
 import matplotlib.pyplot as plt
+import os
 
 st.write('##  랜덤포레스트를 이용한 비행기 가격 예측')
 st.write('---')
