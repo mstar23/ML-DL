@@ -11,5 +11,5 @@ st.write('---')
 
 # 데이터 불러오기
 data = pd.read_csv('C:\\Users\\mjy30\\git_workspace\\ML-DL\\Mini_proj2\\data.csv')
-df = pd.DataFrame(data)
-st.write(df)
+# df = pd.DataFrame(data)
+st.write(data)
