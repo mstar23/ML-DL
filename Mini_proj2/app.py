@@ -10,6 +10,6 @@ st.write('##  랜덤포레스트를 이용한 비행기 가격 예측')
 st.write('---')
 
 # 데이터 불러오기
-data = pd.read_csv('C:\Users\mjy30\git_workspace\ML-DL\Mini_proj2\data.csv')
+data = pd.read_csv('C:\\Users\\mjy30\\git_workspace\\ML-DL\\Mini_proj2\\data.csv')
 df = pd.DataFrame(data)
 st.write(df)
