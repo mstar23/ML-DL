@@ -6,7 +6,7 @@ import math
 import torch
 import matplotlib.pyplot as plt
 import os
-import plotly.plotly as py
+# import plotly.plotly as py
 from sklearn.model_selection import train_test_split
 
 st.write('##  랜덤포레스트를 이용한 비행기 가격 예측')
