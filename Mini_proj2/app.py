@@ -244,7 +244,8 @@ elif options == '03. 시각화(plotly)':
        # 파라미터 변경해가며 예측
        s1_col, s2_col, s3_col = st.columns(3)
        s1_col.selectbox('choose n_estimators',[200,500,800,1000])
-       s2.col.selectboc('choose max_dpth',[5,9,12,20])
+       s2_col.selectbox('choose max_dpth',[5,9,12,20])
+       s3_col.selectbox('choose min_samples_leaf',[5,11,18,22])
 
 
        st.subheader('Score 비교')
