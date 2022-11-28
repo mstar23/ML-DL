@@ -29,6 +29,6 @@ X_train, X_test, y_train, y_test = train_test_split(
 # 시각화 해보기
 model_pkl_path = f"{os.path.dirname(os.path.abspath(__file__))}/randomforest.pkl"
 model = joblib.load(model_pkl_path)
-st.write(model.score(X_train, y_train), mdoel.score(X_test, y_test))
+st.write(model.score(X_train, y_train),model.score(X_test, y_test))
 
 
