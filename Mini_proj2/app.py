@@ -240,6 +240,12 @@ elif options == '03. 시각화(plotly)':
         # score 와 mse 비교
        model_pkl_path = f"{os.path.dirname(os.path.abspath(__file__))}/randomforest.pkl"
        model = joblib.load(model_pkl_path)
+
+        # 파라미터 변경해가며 예측
+        s1_col, s2_col, s3_col = st.columns(3)
+        s1_col = st.multiselect('choose n_estimators',[200,500,800,1000])
+
+
        st.subheader('Score 비교')
        Score_Button = st.button('예측')
        if Score_Button:
