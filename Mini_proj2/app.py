@@ -156,15 +156,6 @@ file_name = 'Data_Train.csv'
 url = f'https://raw.githubusercontent.com/skfkeh/newthing/main/{file_name}'
 
 ########### define ###########
-    
-if st.session_state['chk_balloon'] == False:
-    count_down(5)
-    with st.spinner(text="Please wait..."):
-        time.sleep(1)
-
-    st.balloons()
-    st.session_state['chk_balloon'] = True
-
 
 ################################
 #####       UI Start       #####
