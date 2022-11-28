@@ -240,9 +240,9 @@ elif options == '03. 시각화(plotly)':
        test_relation_square = model.score(X_test, y_test)
        st.write(f' train 결정계수 : {train_relation_square}, test 결정계수 : {test_relation_square}')
 
-       SearchBtn = st.button('Search')
+       SearchBtn2 = st.button('Search')
 
-       if SearchBtn:
+       if SearchBtn2:
            # 시각화 해보기
         fig = make_subplots(rows=1, cols=1, shared_xaxes=True)
         fig.add_trace(go.Scatter(x=y_train,y=y_test, mode='markers',name='Train'))
