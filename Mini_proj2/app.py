@@ -44,8 +44,8 @@ st.write(f' train 결정계수 : {train_relation_square}, test 결정계수 : {t
 # 시각화 해보기
 
 fig = make_subplots(rows=1, cols=1, shared_xaxes=True)
-fig.add_trace(go.Scatter(x=y_train,y=y_test, mode='markers',symbol='Train',name='Train'))
-fig.add_trace(go.Scatter(x=y_test,y=test_pred,mode='markers',symbol='Test',
+fig.add_trace(go.Scatter(x=y_train,y=y_test, mode='markers',symbol='pentagon',name='Train'))
+fig.add_trace(go.Scatter(x=y_test,y=test_pred,mode='markers',symbol='circle',
               name='Test')) # mode='lines+markers'
 
 fig.update_layout(title='<b>actual과 predict 비교')
