@@ -207,17 +207,17 @@ elif options == '03. 시각화(plotly)':
 
         #### Tab1
         with tab_De:
-        col1, col2 = st.columns(2)
+            col1, col2 = st.columns(2)
 
-        st.header("Logistic")
-        st.image("https://github.com/skfkeh/newthing/blob/main/img/Patrick.jpeg?raw=true", width=200)
+            st.header("Logistic")
+            st.image("https://github.com/skfkeh/newthing/blob/main/img/Patrick.jpeg?raw=true", width=200)
 
-        ts_number = col1.slider(label="test_size를 설정해주세요",
-                                min_value=0.00, max_value=1.00,
-                                step=0.10, format="%f")
+            ts_number = col1.slider(label="test_size를 설정해주세요",
+                                    min_value=0.00, max_value=1.00,
+                                    step=0.10, format="%f")
 
-        rs_number = col2.slider(label="random_state 설정",
-                                    min_value=0, max_value=200,
+            rs_number = col2.slider(label="random_state 설정",
+                                        min_value=0, max_value=200,
                                     step=50, format="%d")
 
        # st.write(f'Test_size : {ts_number}      Random_state : {rs_text}{rs_number}')
