@@ -245,6 +245,7 @@ elif options == '03. 시각화(plotly)':
        test_relation_square = model.score(X_test, y_test)
        st.write(f' train 결정계수 : {train_relation_square}, test 결정계수 : {test_relation_square}')
 
+       st.subheader('시각화 부분')
        SearchBtn2 = st.button('Search')
 
        if SearchBtn2:
