@@ -237,7 +237,7 @@ elif options == '03. 시각화(plotly)':
        train_pred = model.predict(X_train) 
        test_pred = model.predict(X_test)
        st.subheader('모델 훈련이 잘 되었는지 시각화')
-       plt.figure(figsize=(6,5))
+       plt.figure(figsize=(4,4))
        plt.scatter(y_train,train_pred,marker='x')
        plt.scatter(y_test, test_pred,marker='o')
        st.pyplot(plt)
