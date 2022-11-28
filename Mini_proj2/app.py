@@ -49,4 +49,4 @@ fig.add_trace(go.Scatter(x=y_test,y=test_pred,mode='markers',
               name='Test')) # mode='lines+markers'
 
 fig.update_layout(title='<b>actual과 predict 비교')
-st.write(fig.show())
+st.plotly_chart(fig)
