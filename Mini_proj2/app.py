@@ -249,7 +249,7 @@ elif options == '03. 시각화(plotly)':
        s3_col.selectbox('choose min_samples_leaf',[5,11,18,22])
 
        predict_button = st.button('예측')
-       if Score_Button:
+       if predict_button:
         
         st.write(model.score(X_train, y_train),model.score(X_test, y_test))
 
