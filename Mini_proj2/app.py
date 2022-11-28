@@ -265,7 +265,8 @@ elif options == '03. 시각화(plotly)':
        st.subheader('RMSE 비교') 
        train_relation_square = mean_squared_error(y_train, train_pred, squared=False)
        test_relation_square = mean_squared_error(y_test, test_pred) ** 0.5
-       st.echo(f' train 결정계수 : {train_relation_square}, test 결정계수 : {test_relation_square}')
+       st.echo():
+        st.write(f' train 결정계수 : {train_relation_square}, test 결정계수 : {test_relation_square}')
 
        st.subheader('시각화 부분')
        SearchBtn2 = st.button('Search')
