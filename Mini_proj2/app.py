@@ -52,7 +52,7 @@
 # st.plotly_chart(fig)
 
 import streamlit as st
-from streamlit_option_menu import option_menu
+# from streamlit_option_menu import option_menu
 import pandas as pd
 import numpy as np
 import plotly.figure_factory as ff
@@ -179,7 +179,7 @@ visualize = st.container()
 if options == '01. Home':
     with Home:
 
-        st.title('내 항공료는 왜 비싼 것인가')
+        st.title('내 항공료는 왜 비싼 것인가💲')
         st.header('다음 항목은 사이드 메뉴를 확인해 주세요.')
 
         jpg_url = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/00f3d481-97e5-4de9-bcf2-48c82b265793/d7uteu8-e50dde9e-b8af-4fea-ab31-b7748470dc8b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAwZjNkNDgxLTk3ZTUtNGRlOS1iY2YyLTQ4YzgyYjI2NTc5M1wvZDd1dGV1OC1lNTBkZGU5ZS1iOGFmLTRmZWEtYWIzMS1iNzc0ODQ3MGRjOGIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.X7DaOWcJkNe2H8jjTNtybdRCV9p5u4H_yFaOk7kMbFg"
@@ -241,7 +241,9 @@ elif options == '03. 시각화(plotly)':
        model_pkl_path = f"{os.path.dirname(os.path.abspath(__file__))}/randomforest.pkl"
        model = joblib.load(model_pkl_path)
        st.subheader('Score 비교')
-       st.write(model.score(X_train, y_train),model.score(X_test, y_test))
+       Score_Button = st.button('예측')
+       if Score_Button:
+        st.write(model.score(X_train, y_train),model.score(X_test, y_test))
        train_pred = model.predict(X_train) 
        test_pred = model.predict(X_test)
        st.subheader('모델 훈련이 잘 되었는지 시각화')

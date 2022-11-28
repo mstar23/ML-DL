@@ -1,5 +1,4 @@
 streamlit
-streamlit_option_menu
 mlxtend
 pandas
 numpy
