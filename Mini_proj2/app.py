@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import os
 # import plotly.plotly as py
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
 
 st.write('##  랜덤포레스트를 이용한 비행기 가격 예측')
 st.write('---')
@@ -30,5 +31,10 @@ X_train, X_test, y_train, y_test = train_test_split(
 model_pkl_path = f"{os.path.dirname(os.path.abspath(__file__))}/randomforest.pkl"
 model = joblib.load(model_pkl_path)
 st.write(model.score(X_train, y_train),model.score(X_test, y_test))
-
+st.subheader('RMSE 비교')
+train_pred = model.predict(X_train) 
+test_pred = model.predict(X_test) 
+train_relation_square = mm.score(X_train, y_train)
+test_relation_square = mm.score(X_test, y_test)
+st.write(f' train 결정계수 : {train_relation_square}, test 결정계수 : {test_relation_square}')
 
