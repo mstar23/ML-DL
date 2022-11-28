@@ -242,16 +242,17 @@ elif options == '03. 시각화(plotly)':
        model = joblib.load(model_pkl_path)
 
        # 파라미터 변경해가며 예측
+       st.subheader('예측하기')
        s1_col, s2_col, s3_col = st.columns(3)
        s1_col.selectbox('choose n_estimators',[200,500,800,1000])
        s2_col.selectbox('choose max_dpth',[5,9,12,20])
        s3_col.selectbox('choose min_samples_leaf',[5,11,18,22])
 
-
-       st.subheader('Score 비교')
-       Score_Button = st.button('예측')
+       predict_button = st.button('예측')
        if Score_Button:
+        
         st.write(model.score(X_train, y_train),model.score(X_test, y_test))
+
        train_pred = model.predict(X_train) 
        test_pred = model.predict(X_test)
 
@@ -272,9 +273,9 @@ elif options == '03. 시각화(plotly)':
        if SearchBtn2:
            # 시각화 해보기
         fig = make_subplots(rows=1, cols=1, shared_xaxes=True)
-        fig.add_trace(go.Scatter(x=y_train,y=y_test, mode='markers',name='Train'))
+        fig.add_trace(go.Scatter(x=y_train,y=y_test, mode='markers',name='Actual'))
         fig.add_trace(go.Scatter(x=y_test,y=test_pred,mode='markers',
-                        name='Test')) # mode='lines+markers'
+                        name='Predict')) # mode='lines+markers'
         fig.update_layout(title='<b>actual과 predict 비교')
         st.plotly_chart(fig)
        
