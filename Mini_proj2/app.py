@@ -218,7 +218,7 @@ elif options == '03. 시각화(plotly)':
     #### Tab2
     with tab_RF:
        st.header("RandomForest")
-       st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
+    #    st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
        data_path = f"{os.path.dirname(os.path.abspath(__file__))}/data.csv"
        data = pd.read_csv(data_path)
        df = pd.DataFrame(data)
@@ -232,10 +232,15 @@ elif options == '03. 시각화(plotly)':
         # score 와 mse 비교
        model_pkl_path = f"{os.path.dirname(os.path.abspath(__file__))}/randomforest.pkl"
        model = joblib.load(model_pkl_path)
+       st.subheader('Score 비교')
        st.write(model.score(X_train, y_train),model.score(X_test, y_test))
-       st.subheader('RMSE 비교')
        train_pred = model.predict(X_train) 
-       test_pred = model.predict(X_test) 
+       test_pred = model.predict(X_test)
+       st.subheader('모델 훈련이 잘 되었는지 시각화')
+       plt.scatter(y_train,train_pred,marker='x')
+       plt.scatter(y_test, test_pred,marker='o')
+       st.pyplot(plt)
+       st.subheader('RMSE 비교') 
        train_relation_square = model.score(X_train, y_train)
        test_relation_square = model.score(X_test, y_test)
        st.write(f' train 결정계수 : {train_relation_square}, test 결정계수 : {test_relation_square}')
@@ -258,25 +263,3 @@ elif options == '03. 시각화(plotly)':
        st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
 
         
-        
-    SearchBtn = st.button('Search')
-    
-    if SearchBtn:
-        # Add histogram data
-    #     x0 = np.random.randn(200) - 5
-        x1 = np.random.randn(200) - 2
-        x2 = np.random.randn(200)
-        x3 = np.random.randn(200) + 2
-    #     x4 = np.random.randn(200) + 5
-
-        # Group data together
-        hist_data = [x1, x2, x3]
-
-        group_labels = ['Group 1', 'Group 2', 'Group 3']
-
-        # Create distplot with custom bin_size
-        fig = ff.create_distplot(
-               hist_data, group_labels, bin_size=[.1, .25, .5])
-
-        # Plot!
-        st.plotly_chart(fig, use_container_width=True)
