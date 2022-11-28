@@ -243,7 +243,7 @@ elif options == '03. 시각화(plotly)':
 
         # 파라미터 변경해가며 예측
         s1_col, s2_col, s3_col = st.columns(3)
-        s1_col = st.multiselect('choose n_estimators',[200,500,800,1000])
+        s1_col.multiselect('choose n_estimators',[200,500,800,1000])
 
 
        st.subheader('Score 비교')
