@@ -169,49 +169,56 @@ url = f'https://raw.githubusercontent.com/skfkeh/newthing/main/{file_name}'
 
 
 options = st.sidebar.radio('Why is my airfare expensive?!', options=['01. Home','02. 데이터 전처리 과정','03. 시각화(plotly)'])
-
+Home = st.container()
+data_preprocessing = st.container()
+visualize = st.container()
 # if uploaded_file:
 #    df = pd.read_excel(url)
 
 if options == '01. Home':
-    st.title('내 항공료는 왜 비싼 것인가')
-    st.header('다음 항목은 사이드 메뉴를 확인해 주세요.')
+    with Home:
 
-    jpg_url = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/00f3d481-97e5-4de9-bcf2-48c82b265793/d7uteu8-e50dde9e-b8af-4fea-ab31-b7748470dc8b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAwZjNkNDgxLTk3ZTUtNGRlOS1iY2YyLTQ4YzgyYjI2NTc5M1wvZDd1dGV1OC1lNTBkZGU5ZS1iOGFmLTRmZWEtYWIzMS1iNzc0ODQ3MGRjOGIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.X7DaOWcJkNe2H8jjTNtybdRCV9p5u4H_yFaOk7kMbFg"
-    # st.set_page_config(layout="wide")
-    st.image(jpg_url, caption="Why So Serious??!")
+        st.title('내 항공료는 왜 비싼 것인가')
+        st.header('다음 항목은 사이드 메뉴를 확인해 주세요.')
 
-    st.write(f"사용한 데이터 URL : {url}")
+        jpg_url = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/00f3d481-97e5-4de9-bcf2-48c82b265793/d7uteu8-e50dde9e-b8af-4fea-ab31-b7748470dc8b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAwZjNkNDgxLTk3ZTUtNGRlOS1iY2YyLTQ4YzgyYjI2NTc5M1wvZDd1dGV1OC1lNTBkZGU5ZS1iOGFmLTRmZWEtYWIzMS1iNzc0ODQ3MGRjOGIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.X7DaOWcJkNe2H8jjTNtybdRCV9p5u4H_yFaOk7kMbFg"
+        # st.set_page_config(layout="wide")
+        st.image(jpg_url, caption="Why So Serious??!")
+
+        st.write(f"사용한 데이터 URL : {url}")
 
 elif options == '02. 데이터 전처리 과정':
-    st.image('https://www.rd.com/wp-content/uploads/2022/04/GettyImages-1140602972-e1651249657746.jpg')
-    df = pd.read_csv(url)
-    
-    st.write("1. 확인을 위한 df.head()")
-    st.dataframe(df.head())
-    
-    
-    pre_data = preprocessing(df)
-    
+    with data_preprocessing:
+        st.image('https://www.rd.com/wp-content/uploads/2022/04/GettyImages-1140602972-e1651249657746.jpg')
+        df = pd.read_csv(url)
+        
+        st.write("1. 확인을 위한 df.head()")
+        st.dataframe(df.head())
+        
+        
+        pre_data = preprocessing(df)
+        
 elif options == '03. 시각화(plotly)':
-    st.write("분석 알고리즘을 골라주세요")
+    with visualize :
 
-    tab_De, tab_RF, tab_XGB = st.tabs(["DecisionTree", "RandomForest", "XGBoost"])
+        st.write("분석 알고리즘을 골라주세요")
 
-    #### Tab1
-    with tab_De:
-       col1, col2 = st.columns(2)
+        tab_De, tab_RF, tab_XGB = st.tabs(["DecisionTree", "RandomForest", "XGBoost"])
 
-       st.header("Logistic")
-       st.image("https://github.com/skfkeh/newthing/blob/main/img/Patrick.jpeg?raw=true", width=200)
+        #### Tab1
+        with tab_De:
+        col1, col2 = st.columns(2)
 
-       ts_number = col1.slider(label="test_size를 설정해주세요",
-                              min_value=0.00, max_value=1.00,
-                              step=0.10, format="%f")
+        st.header("Logistic")
+        st.image("https://github.com/skfkeh/newthing/blob/main/img/Patrick.jpeg?raw=true", width=200)
 
-       rs_number = col2.slider(label="random_state 설정",
-                                  min_value=0, max_value=200,
-                                  step=50, format="%d")
+        ts_number = col1.slider(label="test_size를 설정해주세요",
+                                min_value=0.00, max_value=1.00,
+                                step=0.10, format="%f")
+
+        rs_number = col2.slider(label="random_state 설정",
+                                    min_value=0, max_value=200,
+                                    step=50, format="%d")
 
        # st.write(f'Test_size : {ts_number}      Random_state : {rs_text}{rs_number}')
 
