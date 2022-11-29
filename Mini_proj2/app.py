@@ -427,10 +427,10 @@ elif options == '03. 알고리즘 적용':
         
         # 파라미터 변경해가며 예측
         st.subheader('예측하기')
-        train_pred_xg = model_xg.predict(X_train)
-        test_pred_xg = model_xg.predict(X_test)
-        st.write(f'Train-set : {model_xg.score(X_train, y_train)}')
-        st.write(f'Test-set : {model_xg.score(X_test, y_test)}')
+        # train_pred_xg = model_xg.predict(X_train)
+        # test_pred_xg = model_xg.predict(X_test)
+        # st.write(f'Train-set : {model_xg.score(X_train, y_train)}')
+        # st.write(f'Test-set : {model_xg.score(X_test, y_test)}')
         
         # 훈련 모델 시각화
         st.subheader('모델 훈련이 잘 되었는지 시각화')
