@@ -333,8 +333,9 @@ elif options == '03. 알고리즘 적용':
         st.header("DecisionTree")
         
         # score 와 mse 비교
-        model_pkl_path_dt = f"{os.path.dirname(os.path.abspath(__file__))}/decisionTree.pkl"
-        model_dt = joblib.load(model_pkl_path_dt)
+        # model_pkl_path_dt = f"{os.path.dirname(os.path.abspath(__file__))}/decisionTree.pkl"
+        dt_pkl_path = ('https://github.com/skfkeh/MachineLearning/blob/main/ES/data.csv')
+        model_dt = joblib.load(dt_pkl_path)
         
         st.subheader('예측하기')
         
