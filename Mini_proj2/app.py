@@ -16,6 +16,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 import random       # 각 plotly 그래프의 key값을 적용하기 위한 import
+import xgboost as xgb
 
 ########### function ###########
 ## 카운트 다운
