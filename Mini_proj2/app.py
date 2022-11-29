@@ -4,6 +4,7 @@ import numpy as np
 import os
 import time
 from PIL import Image     # 이미지 처리 라이브러리
+import xgboost
 
 import matplotlib.pyplot as plt 
 import joblib
