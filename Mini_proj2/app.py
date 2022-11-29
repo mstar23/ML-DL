@@ -423,6 +423,7 @@ elif options == '03. 알고리즘 적용':
         # score 와 mse 비교
         xg_path = f"{os.path.dirname(os.path.abspath(__file__))}/xgb_please.pkl"
         model_xg = joblib.load(xg_path)
+        st.write(model_xg)
         
         # 파라미터 변경해가며 예측
         st.subheader('예측하기')
