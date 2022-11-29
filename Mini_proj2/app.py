@@ -17,6 +17,8 @@ from plotly.subplots import make_subplots
 
 import random       # 각 plotly 그래프의 key값을 적용하기 위한 import
 
+import xgboost as xgb
+
 ########### function ###########
 ## 카운트 다운
 def count_down(ts):
@@ -421,9 +423,16 @@ elif options == '03. 알고리즘 적용':
     with tab_XGB:
         st.header("XGBoost")
         # score 와 mse 비교
-        xg_path = f"{os.path.dirname(os.path.abspath(__file__))}/xgb_please.pkl"
-        model_xg = joblib.load(xg_path)
-        st.write(model_xg)
+        model = xgb.XGBRegressor(subsample = 1, n_estimators = 2000, max_depth = 5, random_state = 100, learning_rate = 0.01)
+        model.fit(X_train, y_train)
+        train_pred = model.predict(X_train)
+        test_pred = model.predict(X_test)
+
+        train_relation_square = model.score(X_train, y_train)
+        test_relation_square = model.score(X_test, y_test)
+        st.write(f'train 결정계수 : {train_relation_square} / test 결정계수 : {test_relation_square}')
+        # xg_path = f"{os.path.dirname(os.path.abspath(__file__))}/xgb_please.pkl"
+        # model_xg = joblib.load(xg_path)
         
         # 파라미터 변경해가며 예측
         st.subheader('예측하기')
